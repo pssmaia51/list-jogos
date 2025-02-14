@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 public class Game {
     
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     
@@ -24,8 +24,11 @@ public class Game {
     private String platforms;
     private Double score;
     private String imgUrl;
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
-    private String longDescription;
+    @Column(columnDefinition = "TEXT")
+    private String longDescription;    
+    
     
     public Game() {    	
     	

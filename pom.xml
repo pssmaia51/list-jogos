@@ -4,14 +4,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.4.2</version>
+		<artifactId>spring-boot-starter-parent</artifactId>		
+		<version>3.4.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.paulodev</groupId>
-	<artifactId>dsjogos</artifactId>
+	<groupId>com.devsuperior</groupId>
+	<artifactId>listjogosjogos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>dsjogos</name>
+	<name>listgame</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -38,7 +38,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -58,11 +57,12 @@
 
 	<build>
 		<plugins>
-		<plugin>
-    		<groupId>org.apache.maven.plugins</groupId>
-    		<artifactId>maven-resources-plugin</artifactId>
-    		<version>3.1.0</version> <!--$NO-MVN-MAN-VER$ -->
-		</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version> <!--$NO-MVN-MAN-VER$ -->
+			</plugin>
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

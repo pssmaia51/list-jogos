@@ -15,7 +15,7 @@ import com.paulodev.dsjogos.services.GameService;
 
 @RestController
 @RequestMapping(value = "/games")
-public class Controller {
+public class GameController {
 	
 	@Autowired
 	private GameService gameService;

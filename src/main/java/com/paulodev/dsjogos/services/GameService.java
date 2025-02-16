@@ -1,5 +1,6 @@
 package com.paulodev.dsjogos.services;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -8,6 +9,7 @@ import com.paulodev.dsjogos.dto.GameDTO;
 import com.paulodev.dsjogos.dto.GameMinDTO;
 import com.paulodev.dsjogos.entities.Game;
 import com.paulodev.dsjogos.excecoes.ResourceNotFoundException;
+import com.paulodev.dsjogos.projections.GameMinProjection;
 import com.paulodev.dsjogos.repositories.GameRepository;
 
 
@@ -32,5 +34,13 @@ public class GameService {
     public List<GameMinDTO> findAll() {
         List<Game> result = gameRepository.findAll();
         return result.stream().map(GameMinDTO::new).toList();
+    }
+    
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> findByList(Long listId) {
+        List<GameMinProjection> result = gameRepository.searchByList(listId);
+        return result.stream().map(GameMinDTO::new).collect(Collectors.toList());
+
+        //return result.stream().map(GameMinDTO::new).toList();
     }
 }
